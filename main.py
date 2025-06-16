@@ -10,6 +10,17 @@ from pydantic import AnyUrl, Field
 import readabilipy
 from pathlib import Path
 import latex2markdown
+import re
+
+def strip_custom_commands(latex):
+    # Remove lines starting with custom macros or comments
+    latex = re.sub(r'^%.*$', '', latex, flags=re.MULTILINE)
+    latex = re.sub(r'\\(projecttitle|projectlink|projectdate|projecttech|faPhone\*?|faEnvelope|faLinkedin|faGithub|vspace)\{[^\}]*\}', '', latex)
+    latex = re.sub(r'\\hfill', '', latex)
+    latex = re.sub(r'\\\\', '\n', latex)
+    latex = re.sub(r'\\&', '&', latex)
+    return latex
+
 
 
 TOKEN = "9f2c7cb364bd"
@@ -141,11 +152,10 @@ no extra formatting.",
 async def resume() -> str:
     try:
         resume_content=""
-        with Path("main.tex").open("r", encoding="utf-8") as f:
+        with Path("main.md").open("r", encoding="utf-8") as f:
             resume_content = f.read()
-        l2m = latex2markdown.LaTeX2Markdown(resume_content)
-        markdown_string = l2m.to_markdown()
-        return markdown_string.strip()  # Return the markdown content of your resume
+        
+        return resume_content.strip()  # Return the markdown content of your resume
     except Exception as e:
         print(f"Error fetching resume: {e!r}")
         """
