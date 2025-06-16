@@ -1,0 +1,120 @@
+\documentclass[letterpaper,10pt]{article}
+
+% -------------------- PACKAGES --------------------
+% Core & Encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Layout & Geometry
+\usepackage[margin=0.6in]{geometry}
+\usepackage{microtype} % Improves typography and spacing
+
+% Design & Aesthetics
+\usepackage{lato} % A clean, modern sans-serif font
+\usepackage[dvipsnames]{xcolor} % For defining custom colors
+\usepackage{fontawesome5} % For icons (e.g., email, LinkedIn)
+\usepackage{titlesec}   % For customizing section headers
+
+% Utilities
+\usepackage{enumitem} % For list customization
+\usepackage[hidelinks]{hyperref} % For clickable links without borders
+
+% -------------------- DESIGN & FORMATTING SETUP --------------------
+% Colors
+\definecolor{primarycolor}{RGB}{30, 80, 140} % Professional blue for headers and name
+\definecolor{graytext}{RGB}{80, 80, 80}       % Dark gray for body text
+
+% Fonts
+\renewcommand{\familydefault}{\sfdefault} % Set default font to sans-serif (Lato)
+\color{graytext} % Set default text color
+
+% Spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+\renewcommand{\labelitemi}{--}
+
+% Custom Section Header Style
+% Creates a colored section title with a horizontal rule beneath it
+\titleformat{\section}{\Large\bfseries\color{primarycolor}}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% -------------------- CUSTOM COMMANDS --------------------
+\newcommand{\projecttitle}[1]{{\large\bfseries\color{black} #1}}
+\newcommand{\projecttech}[1]{{\itshape\color{graytext} #1}}
+\newcommand{\projectdate}[1]{{\small\bfseries #1}}
+% New command for project links with icons
+\newcommand{\projectlink}[2]{\href{#2}{\small #1}\hspace{1em}}
+
+% ==================== DOCUMENT BEGINS ====================
+\begin{document}
+
+% -------------------- HEADER --------------------
+\begin{center}
+    {\Huge\bfseries\color{primarycolor} KRISHNA BANSAL}\\[4pt]
+    {\large Software Engineer • Python / TypeScript / Emerging ML • B.Tech ECE}\\[8pt]
+    \small
+    \faPhone* \href{tel:+918439564611}{+91-8439564611} \quad•\quad
+    \faEnvelope \href{mailto:krishnabansal890@gmail.com}{krishnabansal890@gmail.com} \quad•\quad
+    \faLinkedin \href{https://linkedin.com/in/krishna-bansal-a82a68254}{linkedin.com/in/krishna-bansal} \quad•\quad
+    \faGithub \href{https://github.com/krishnabansal89}{github.com/krishnabansal89}
+\end{center}
+
+% -------------------- PROFESSIONAL SUMMARY --------------------
+\section{Professional Summary}
+Highly motivated Software Engineering student with extensive hands-on experience building full-stack web applications, real-time systems, and browser extensions. Proficient in TypeScript, Python, Rust, and modern C\#. Demonstrated expertise in machine learning by training and deploying a DistilBERT-based model to enhance video consumption workflows. Skilled in designing scalable REST/WebSocket APIs, automating cloud deployments, and integrating user-centric ML components.
+
+% -------------------- EDUCATION --------------------
+\section{Education}
+\textbf{B.Tech, Electronics \& Communication Engineering} \hfill 2022--2026\\
+Ajay Kumar Garg Engineering College (AKTU), Ghaziabad, India
+
+% -------------------- TECHNICAL SKILLS --------------------
+\section{Technical Skills}
+\textbf{Languages:} Python, TypeScript, JavaScript, Rust, C\#, C++\\
+\textbf{Machine Learning:} TensorFlow, Scikit-learn, Transformers (DistilBERT), ONNX Runtime\\
+\textbf{Web \& Backend:} React, Next.js, FastAPI, Django, Node.js, Express.js, WebSocket\\
+\textbf{Databases:} MongoDB, PostgreSQL, Redis\\
+\textbf{DevOps \& Tools:} Docker, Amazon Web Services (AWS), GitHub Actions, Chrome Extension Dev
+
+% -------------------- SELECTED PROJECTS --------------------
+\section{Selected Projects}
+
+% --- Project 1 ---
+\projecttitle{GetItWrite: AI-Powered Text Transformation Platform} \projectlink{\faGlobe}{https://www.getitwrite.in} \hfill \projectdate{Oct 2024 -- Present}\\
+\projecttech{Next.js • FastAPI • LangChain • AWS • PostgreSQL • Redis}
+\begin{itemize}[leftmargin=*,noitemsep]
+\item Architected and launched a persona-driven writing assistant that acquired over \textbf{6,000 users} in its first week while maintaining \textbf{99.9\% uptime}.
+\item Designed scalable WebSocket APIs for live, interactive text editing and integrated LangChain for dynamic prompt management and generation.
+\item Automated containerized deployments on AWS ECS using GitHub Actions for Continuous Integration/Continuous Deployment (CI/CD), reducing the software release cycle by 40\%.
+\end{itemize}
+
+\vspace{4pt} % Add a little space between projects
+
+% --- Project 2 ---
+\projecttitle{Sponsor-Hell: Chrome Extension for Skipping Video Sponsors} \projectlink{\faGithub}{https://github.com/krishnabansal89/Sponsor-Hell} \hfill \projectdate{Jan 2024}\\
+\projecttech{Python • TensorFlow • Transformers (DistilBERT) • ONNX • Chrome Extension}
+\begin{itemize}[leftmargin=*,noitemsep]
+\item Developed a Chrome extension that uses a fine-tuned DistilBERT classifier to detect and automatically skip sponsored segments in YouTube videos.
+\item Trained and optimized a binary classification model in TensorFlow, achieving over \textbf{90\% accuracy} on a curated dataset of video transcripts.
+\item Exported the trained model to ONNX for lightweight, efficient client-side inference within the browser extension.
+\end{itemize}
+
+\vspace{4pt} % Add a little space between projects
+
+% --- Project 3 ---
+\projecttitle{MagicFormatter: Google Docs AI Formatter} \projectlink{\faGithub}{https://github.com/krishnabansal89/magicFormatter} \hfill \projectdate{Feb 2025}\\
+\projecttech{Google Apps Script • Python • OpenAI API}
+\begin{itemize}[leftmargin=*,noitemsep]
+\item Created an AI-driven Google Docs add-on to apply context-aware formatting rules, reducing manual document editing time by an estimated \textbf{30\%}.
+\item Implemented a serverless Python backend, invoked via Google Apps Script, for real-time document parsing and rule-based text transformation.
+\end{itemize}
+
+% -------------------- ACHIEVEMENTS --------------------
+\section{Achievements}
+\begin{itemize}[leftmargin=*,noitemsep]
+\item \textbf{Samsung Solve for Tomorrow India} — Top 10 National Semi-Finalist (2024)
+\item \textbf{IIT Jodhpur Prometeo'24} — Second Runner-Up, National Tech Fest
+\item \textbf{First Place} — Blind Coding \& Rush-Hour Programming Competitions (College-Level)
+\end{itemize}
+
+\end{document}
