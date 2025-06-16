@@ -12,8 +12,8 @@ from pathlib import Path
 import latex2markdown
 
 
-TOKEN = "<generated_token>"
-MY_NUMBER = "9189XXXXXXXX"  # Insert your number {91}{Your number}
+TOKEN = "9f2c7cb364bd"
+MY_NUMBER = "918439564611"  # Insert your number {91}{Your number}
 
 
 class RichToolDescription(BaseModel):
